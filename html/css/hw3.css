@@ -132,19 +132,17 @@ marquee > img{
   .container3button{
     display: none;
   }
-
   @media only screen and (min-width:300px) and (max-width:700px) {
     .container3button{
         display: block;
       }
-    .subnav{
-        display: none;
+  
+    .navItem{
+      display: none;
     }
-    
-    #icon2:hover .subnav{
-      display: flex;
+    .container3button {
+
     }
-    
     .imageinfo{
         display: grid;
         grid-template-columns: auto;

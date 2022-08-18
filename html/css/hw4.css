@@ -1,0 +1,23 @@
+body{
+    background-image: linear-gradient( to bottom , #00d1dc , #dd00f6);
+}
+.parent{
+    padding: 6%;
+    height: min-content;
+}
+.child{
+    background-image: linear-gradient(to bottom, #05050590, #ffffff);
+    height: 75vh;
+    padding: 0%;
+    z-index: 100;
+    border: 2px solid rgba(255, 255, 255, 0.353);
+    box-shadow: 0px 4px 8px 0px black;
+}
+.child > img {
+    margin-top: 7%;
+    margin-left: 25%;
+    width: 50%;
+    z-index: 100;
+    border: 2px solid rgba(255, 255, 255, 0.353);
+    box-shadow: 0px 4px 8px 0px black;
+}

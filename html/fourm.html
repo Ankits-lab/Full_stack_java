@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/fourm.css">
+</head>
+<body>
+    <div class="forum">
+        <div class="child">
+            <!-- <form > -->
+            <input type="text" id="fname" placeholder="First Name">
+            <input type="text" id="lname" placeholder="Last Name">
+            <input type="text" id="age" placeholder="AGE">
+            <input type="text" id="MobileNo" placeholder="Mobile Number">
+            <input type="file" id="profilepic" placeholder="Profile Picture">
+            <label for="profilepic" id="profilepitcure">Select profile pitcure</label>
+            <br>
+            <br>
+            <div class="Salary">
+                <label>Salary</label>
+                <input type="range" id="a" value="50" min="0" max="1000000">
+                <output name="x" for="a">
+                </output>
+            </div>
+            <input type="date" placeholder="Date of birth">
+            <button onclick="displayData()" value="submit">Submit</button>
+        <!-- </form> -->
+            </div>
+            </div>
+
+            <table>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Age</th>
+                    <th>Mobile Number</th>
+                </tr>
+                <tr id="demo">
+
+                </tr>
+            </table>
+
+    <script>
+        function displayData(){
+            
+            var first_name = document.getElementById("fname").value;
+            var lname = document.getElementById("lname").value;
+            var age = document.getElementById("age").value;
+            var MobileNo = document.getElementById("MobileNo").value;
+            
+            const myobj = {
+                "firstName" : first_name,
+                "lastName" : lname,
+                "age" : age,
+                "MobileNo" : MobileNo,
+
+            }
+            console.log(myobj);
+            document.getElementById("demo").innerHTML = "<td>"+myobj.firstName+"</td>"+"<td>"+myobj.lastName+"</td>"+"<td>"+myobj.age+"</td>"+"<td>"+myobj.MobileNo+"</td>" ;
+        }
+    </script>
+</body>
+</html>

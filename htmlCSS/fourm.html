@@ -44,6 +44,8 @@
             </table>
 
     <script>
+        
+        let myArray = [];
         function displayData(){
             
             var first_name = document.getElementById("fname").value;
@@ -58,7 +60,9 @@
                 "MobileNo" : MobileNo,
 
             }
-            console.log(myobj);
+            myArray.push(myobj);
+            console.log(myArray.length )
+            
             document.getElementById("demo").innerHTML = "<td>"+myobj.firstName+"</td>"+"<td>"+myobj.lastName+"</td>"+"<td>"+myobj.age+"</td>"+"<td>"+myobj.MobileNo+"</td>" ;
         }
     </script>

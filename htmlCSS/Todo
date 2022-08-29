@@ -24,3 +24,15 @@ lorem on right side and imager on left side
 16/0822
 css
 legends
+
+26/08/22
+Make a button onClick 
+call a function from a function and pass values between functions
+and return sum 
+
+a to be in 1st function
+b to be in 2nd function
+then do sum in second function
+
+and make function(a) and function(a,b)
+

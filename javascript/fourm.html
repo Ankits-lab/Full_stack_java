@@ -64,17 +64,29 @@
 
             myArray.push(myobj);
             console.log(myArray);
-            
-            for(let value of myArray){
-                console.log(value);
-               // let newRow = table.insertRow(0);
-                let newRow = table.insertRow(0);
-
-                newRow.insertCell(0).innerHTML = value.firstName;
-                newRow.insertCell(1).innerHTML = value.lastName;
-                newRow.insertCell(2).innerHTML = value.age;
-                newRow.insertCell(3).innerHTML = value.MobileNo;
+            let correctEntry = true
+            for(let obj in myobj){
+                if( myobj[obj] == ''){
+                    // alert('Value is missing');
+                    correctEntry = false
+                }else{
+                    
+                }
             }
+            if(!correctEntry){
+                
+            }
+
+                // for(let value of myArray){
+                //         console.log(value);
+                //     // let newRow = table.insertRow(0);
+                //         let newRow = table.insertRow(0);
+
+                //         newRow.insertCell(0).innerHTML = value.firstName;
+                //         newRow.insertCell(1).innerHTML = value.lastName;
+                //         newRow.insertCell(2).innerHTML = value.age;
+                //         newRow.insertCell(3).innerHTML = value.MobileNo;
+                //    }
         }
     </script>
 </body>

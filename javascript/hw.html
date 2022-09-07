@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent {}
+
+        .child {}
+    </style>
+</head>
+
+<body>
+
+    <div class="parent">
+        <div class="child">
+                <input type="text" placeholder="FirstName" name="FirstName" id="FirstName">
+                <input type="text" placeholder="LastName" name="LastName" id="LastName">
+                <button onclick="displayData()">Submit</button>
+        </div>
+    </div>
+
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Buttons</th>
+        </tr>
+        <tbody id="demo">
+
+        </tbody>
+    </table>
+
+    <script>
+           let myArray = [];
+           for (let value of myArray) {
+                    console.log(value);
+                    let index= myArray.length;
+                    // let newRow = table.insertRow(0);
+                    let newRow = table.insertRow(0);
+                    newRow.insertCell(0).innerHTML = value.id;
+                    newRow.insertCell(1).innerHTML = value.firstName;
+                    newRow.insertCell(2).innerHTML = value.lastName;
+                    newRow.insertCell(3).innerHTML = '<button id="button1" onClick="(Edit(this.value))" >Edit</button>';
+                     document.getElementById("button1").value = value.id;
+                }
+        function displayData() {
+           // let myArray = [];
+           
+            let table = document.getElementById("demo");
+            table.innerHTML = '';
+            var first_name = document.getElementById("FirstName").value;
+            var lname = document.getElementById("LastName").value;
+
+            const myobj = {
+                "id":  Date.now(),
+                "firstName": first_name,
+                "lastName": lname,
+            }
+
+            myArray.push(myobj);
+                //setattribut
+                //apend
+
+                // for (let value of myArray) {
+                    for(let value = 0 ; value < myArray.length; value++){
+                    
+                    console.log(value);
+                    let index= myArray.length;
+                    // let newRow = table.insertRow(0);
+                    let newRow = table.insertRow(-1);
+                    newRow.insertCell(0).innerHTML = myArray[value].id;
+                    newRow.insertCell(1).innerHTML = myArray[value].firstName;
+                    newRow.insertCell(2).innerHTML = myArray[value].lastName;
+                    // // newRow.insertCell(3).innerHTML = '<button id="button1" onClick="(Edit(this.value))" >Edit</button>';
+                    //  document.getElementById("button1").value = value.id;
+
+
+                     let button1 = document.createElement("button");
+                     button1.setAttribute("OnClick", `Edit(this.id)`);
+                     button1.setAttribute("id",value);
+                     button1.innerHTML = "Edit";
+                     console.log("button1", button1);
+                     let button2 = document.createElement("button");
+                     button2.setAttribute("OnClick", `Edit(this.id)`);
+                     button2.setAttribute("id",value);
+                     button2.innerHTML = "Delete";
+                     console.log("button2", button2);
+
+                     let cell = newRow.insertCell(3);
+                     cell.append(button1);
+                     cell.append(button2);
+
+
+                }
+                
+        }
+        function Edit(id){
+            //DONT USE COMMENTED CODE
+            // let checker = [];
+            console.log(id);
+            // let getID = id;
+            // const found  = myArray.some((x) => x.id == id)
+            // if (!found) myArray.push({ id, username: name });
+            // index = myArray.findIndex(x => x.prop2 ==="id1");
+            // console.log(index);
+        }
+    </script>
+</body>
+
+</html>

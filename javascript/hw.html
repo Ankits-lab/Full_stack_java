@@ -22,7 +22,7 @@
                 <button onclick="displayData()">Submit</button>
         </div>
     </div>
-
+    <p id="updatedata"></p>
     <table>
         <tr>
             <th>Id</th>
@@ -34,6 +34,7 @@
 
         </tbody>
     </table>
+    <div id="parentElement"></div>
 
     <script>
            let myArray = [];
@@ -51,8 +52,7 @@
         function displayData() {
            // let myArray = [];
            
-            let table = document.getElementById("demo");
-            table.innerHTML = '';
+            
             var first_name = document.getElementById("FirstName").value;
             var lname = document.getElementById("LastName").value;
 
@@ -65,9 +65,13 @@
             myArray.push(myobj);
                 //setattribut
                 //apend
-
-                // for (let value of myArray) {
-                    for(let value = 0 ; value < myArray.length; value++){
+               const print = Print();
+        }
+        function Print(){
+            let table = document.getElementById("demo");
+            table.innerHTML = '';
+                            // for (let value of myArray) {
+            for(let value = 0 ; value < myArray.length; value++){
                     
                     console.log(value);
                     let index= myArray.length;
@@ -79,7 +83,8 @@
                     // // newRow.insertCell(3).innerHTML = '<button id="button1" onClick="(Edit(this.value))" >Edit</button>';
                     //  document.getElementById("button1").value = value.id;
 
-
+                    let deleteid = myArray.length+1;
+                    console.log(deleteid);
                      let button1 = document.createElement("button");
                      button1.setAttribute("OnClick", `Edit(this.id)`);
                      button1.setAttribute("id",value);
@@ -87,7 +92,7 @@
                      console.log("button1", button1);
                      let button2 = document.createElement("button");
                      button2.setAttribute("OnClick", `Edit(this.id)`);
-                     button2.setAttribute("id",value);
+                     button2.setAttribute("id",deleteid);
                      button2.innerHTML = "Delete";
                      console.log("button2", button2);
 
@@ -97,17 +102,16 @@
 
 
                 }
-                
+
         }
         function Edit(id){
-            //DONT USE COMMENTED CODE
-            // let checker = [];
             console.log(id);
-            // let getID = id;
-            // const found  = myArray.some((x) => x.id == id)
-            // if (!found) myArray.push({ id, username: name });
-            // index = myArray.findIndex(x => x.prop2 ==="id1");
-            // console.log(index);
+            document.getElementById("parentElement").innerHTML = "<input id="displayTEXT">";    
+            let input1 = document.createElement("input");
+            input1.setAttribute("OnClick", `Edit(this.id)`);
+            input1.setAttribute("id",id);
+            input1.innerHTML = "Edit";
+ 
         }
     </script>
 </body>
